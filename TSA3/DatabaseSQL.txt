@@ -1,0 +1,85 @@
+-- ============================================
+-- LANY Concert Ticketing System - Database
+-- Run this in phpMyAdmin or MySQL CLI
+-- ============================================
+
+CREATE DATABASE IF NOT EXISTS lany_tickets;
+USE lany_tickets;
+
+-- Users table
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Concerts table
+CREATE TABLE IF NOT EXISTS concerts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    venue VARCHAR(150) NOT NULL,
+    concert_date DATE NOT NULL,
+    concert_time TIME NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    total_seats INT NOT NULL DEFAULT 0,
+    available_seats INT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Ticket categories
+CREATE TABLE IF NOT EXISTS ticket_categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    concert_id INT NOT NULL,
+    category_name VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    total_quantity INT NOT NULL,
+    available_quantity INT NOT NULL,
+    FOREIGN KEY (concert_id) REFERENCES concerts(id) ON DELETE CASCADE
+);
+
+-- Bookings table
+CREATE TABLE IF NOT EXISTS bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    concert_id INT NOT NULL,
+    category_id INT NOT NULL,
+    quantity INT NOT NULL DEFAULT 1,
+    total_price DECIMAL(10,2) NOT NULL,
+    booking_code VARCHAR(20) NOT NULL UNIQUE,
+    status ENUM('pending','confirmed','cancelled') DEFAULT 'confirmed',
+    booked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (concert_id) REFERENCES concerts(id),
+    FOREIGN KEY (category_id) REFERENCES ticket_categories(id)
+);
+
+-- ============================================
+-- SEED DATA - LANY Concerts
+-- ============================================
+
+INSERT INTO concerts (title, venue, concert_date, concert_time, description, total_seats, available_seats) VALUES
+('LANY: LIVE IN MANILA', 'SM Mall of Asia Arena, Pasay City', '2025-09-20', '20:00:00', 'Experience LANY live as they bring their signature dreamy indie-pop sound to Manila! Known for hits like "ILYSB", "thru these tears", and "good guys", LANY delivers an unforgettable night of emotion and energy.', 10000, 10000),
+('LANY: DREAM WORLD TOUR', 'Araneta Coliseum, Quezon City', '2025-11-15', '19:30:00', 'The Dream World Tour comes to the Philippines! Paul Klein and the band bring their latest album to life in an immersive, visually stunning production.', 8500, 8500),
+('LANY: AN EVENING WITH LANY', 'The Tent at Greenfield District, Mandaluyong', '2025-12-05', '20:00:00', 'An intimate evening with LANY — a stripped-back, acoustic-leaning set in a more personal venue. Limited seats available.', 3000, 3000);
+
+INSERT INTO ticket_categories (concert_id, category_name, price, total_quantity, available_quantity) VALUES
+(1, 'General Admission', 2500.00, 4000, 4000),
+(1, 'Lower Box', 4500.00, 3000, 3000),
+(1, 'Upper Box', 3200.00, 2000, 2000),
+(1, 'VIP Floor', 8500.00, 700, 700),
+(1, 'VVIP / Soundcheck', 15000.00, 300, 300),
+
+(2, 'General Admission', 2200.00, 3500, 3500),
+(2, 'Lower Box', 4000.00, 2500, 2500),
+(2, 'Upper Box', 2800.00, 1500, 1500),
+(2, 'VIP Floor', 7500.00, 800, 800),
+(2, 'VVIP / Soundcheck', 13000.00, 200, 200),
+
+(3, 'General Admission', 3500.00, 1500, 1500),
+(3, 'Premium Seated', 6500.00, 1000, 1000),
+(3, 'VIP Table (2 persons)', 20000.00, 400, 400),
+(3, 'VVIP Meet & Greet', 25000.00, 100, 100);
