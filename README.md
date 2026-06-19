@@ -13,7 +13,8 @@
 
 | Homepage | Book Tickets | My Tickets |
 |---|---|---|
-|  | * | <img width="940" height="826" alt="image" src="https://github.com/user-attachments/assets/5d02ddcc-996e-4c49-a533-596bfee2a720" />
+| <img width="1370" height="866" alt="image" src="https://github.com/user-attachments/assets/1c6f7f48-e30d-4048-9a06-dd846bc23caf" />
+ | * | <img width="940" height="826" alt="image" src="https://github.com/user-attachments/assets/5d02ddcc-996e-4c49-a533-596bfee2a720" />
  |
 
 ---
