@@ -13,7 +13,8 @@
 
 | Homepage | Book Tickets | My Tickets |
 |---|---|---|
-| *(add screenshot here)* | *(add screenshot here)* | *(add screenshot here)* |
+|  | * | <img width="940" height="826" alt="image" src="https://github.com/user-attachments/assets/5d02ddcc-996e-4c49-a533-596bfee2a720" />
+ |
 
 ---
 
