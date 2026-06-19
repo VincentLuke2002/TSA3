@@ -140,7 +140,7 @@ function formatTime($t) {
               <span class="price-value">₱<?= number_format($c['min_price'], 0) ?></span>
               <span class="price-to">to ₱<?= number_format($c['max_price'], 0) ?></span>
             </div>
-            <a href="BookTicket.php?concert_id=<?= $c['id'] ?>" class="btn-book">
+            <a href="BookTickets.php?concert_id=<?= $c['id'] ?>" class="btn-book">
               <?= isLoggedIn() ? 'Book Tickets' : 'Sign In to Book' ?>
               <span class="btn-arrow">→</span>
             </a>

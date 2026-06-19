@@ -329,9 +329,7 @@ input, button { font-family: inherit; }
   50%      { transform: rotate(45deg) translateY(6px); opacity: 1; }
 }
 
-/* 
-   SHOWS SECTION
-    */
+/*  SHOWS SECTION */
 .shows-section {
   padding: 100px 1.5rem;
 }
