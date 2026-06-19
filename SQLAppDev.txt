@@ -1,0 +1,73 @@
+# TABLES
+# User Table
+# Notes: Phone Number 09 format
+
+CREATE TABLE Users (
+	user_id INT AUTO_INCREMENT PRIMARY KEY, 
+	username VARCHAR(50) UNIQUE NOT NULL, 
+	password VARCHAR(100) NOT NULL, 
+	first_name VARCHAR(50) NOT NULL, 
+	last_name VARCHAR(50) NOT NULL, 
+	email VARCHAR(100) UNIQUE NOT NULL, 
+	contact_number VARCHAR(11) NOT NULL, 
+	generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+
+# Concert Table
+CREATE TABLE Concerts (
+    concert_id INT AUTO_INCREMENT PRIMARY KEY,
+    concert_name VARCHAR(100) NOT NULL,
+    artist_name VARCHAR(100) NOT NULL);
+
+# Concert Dates Table
+CREATE TABLE Concert_Dates (
+    concertDate_id INT AUTO_INCREMENT PRIMARY KEY,
+    concert_id INT NOT NULL,
+    concert_date DATE NOT NULL,
+    FOREIGN KEY (concert_id) REFERENCES Concerts(concert_id));
+
+# Ticket Purchases
+CREATE TABLE ticket_purchases (
+    purchase_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    concert_id INT NOT NULL,
+    concertdate_id INT NOT NULL,
+    section_id INT NOT NULL,
+    quantity INT NOT NULL,
+    payment_method VARCHAR(30) NOT NULL,
+    total_amount DECIMAL(10,2) NOT NULL,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (concert_id) REFERENCES concerts(concert_id),
+    FOREIGN KEY (concertdate_id) REFERENCES concert_dates(concertdate_id),
+    FOREIGN KEY (section_id) REFERENCES seat_sections(section_id));
+
+# Seat Sections
+CREATE TABLE Seat_Sections (
+    section_id INT AUTO_INCREMENT PRIMARY KEY,
+    section_name VARCHAR(50) NOT NULL,
+    price DECIMAL(10,2) NOT NULL);
+
+# Data Inserts
+# Lany Concert
+INSERT INTO Concerts (concert_name, artist_name)
+    VALUES ('soft by LANY: the world tour', 'LANY');
+
+# Lany Concert
+INSERT INTO Concert_Dates (concert_id, concert_date)
+VALUES	
+    (1, '2026-11-07'),
+    (1, '2026-11-08');
+
+# Seat Sections
+INSERT INTO Seat_Sections (section_name, price)
+VALUES
+    ('Floor Standing', 9500.00),
+    ('LBA Premium', 8500.00),
+    ('LBA Regular', 7500.00),
+    ('LBB Premium', 6500.00),
+    ('LBB Regular', 5500.00),
+    ('UBA', 4500.00),
+    ('UBB Premium', 3750.00),
+    ('UBB Regular', 2750.00),
+    ('UBB Sides', 1750.00);
