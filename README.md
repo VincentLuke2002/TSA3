@@ -170,4 +170,4 @@ This project is for educational purposes as part of **TSA3**.
 
 ---
 
-<p align="center">Made for LANY 🎵 &nbsp;|&nbsp; TSA3 &nbsp;|&nbsp; 2025</p>
+<p align="center">Made for LANY 🎵 &nbsp;|&nbsp; TSA3 &nbsp;|&nbsp; 2026</p>
