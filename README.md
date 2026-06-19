@@ -31,22 +31,28 @@
 ## 🗂️ Folder Structure
 
 ```
+
 htdocs/TSA3/
-├── database.sql               ← Run this first in phpMyAdmin
+├── database.sql                   ← Run this first in phpMyAdmin (for Activity_B only)
 ├── Activity_A/
-│   ├── Display.php            ← Redirects to Activity_B
-│   ├── Login.php              ← Redirects to Activity_B
-│   ├── Logout.php             ← Redirects to Activity_B
-│   └── RegistrationPage.php   ← Redirects to Activity_B
+│   ├── Data.php                   ← Hardcoded concert/ticket data + session helpers (NO database)
+│   ├── Display.php                ← Homepage: concert listing (from Data.php)
+│   ├── Login.php                  ← User sign-in (checks session-stored account)
+│   ├── Logout.php                 ← Session destroy + redirect
+│   ├── RegistrationPage.php       ← New account creation (saved to $_SESSION)
+│   ├── BookTickets.php            ← Ticket category picker + booking (session-based)
+│   ├── Bookings.php               ← My Tickets: booking history (from $_SESSION)
+│   └── style.css                  ← All styles (dark concert theme)
+│
 └── Activity_B/
-    ├── Database.php           ← DB connection + session helpers
-    ├── Display.php            ← Homepage: concert listing
-    ├── Login.php              ← User sign-in
-    ├── Logout.php             ← Session destroy + redirect
-    ├── RegistrationPage.php   ← New account creation
-    ├── BookTicket.php         ← Ticket category picker + booking
-    ├── Bookings.php           ← My Tickets: booking history
-    └── style.css              ← All styles (dark concert theme)
+    ├── Database.php                ← DB connection + session helpers
+    ├── Display.php                 ← Homepage: concert listing
+    ├── Login.php                   ← User sign-in
+    ├── Logout.php                  ← Session destroy + redirect
+    ├── RegistrationPage.php        ← New account creation
+    ├── BookTickets.php             ← Ticket category picker + booking
+    ├── Bookings.php                ← My Tickets: booking history
+    └── style.css                   ← All styles (dark concert theme)
 ```
 
 ---
