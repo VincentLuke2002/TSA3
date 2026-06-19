@@ -162,9 +162,9 @@ input, button { font-family: inherit; }
   color: var(--text-primary);
 }
 
-/* ============================================
+/* 
    HERO
-   ============================================ */
+    */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -329,9 +329,9 @@ input, button { font-family: inherit; }
   50%      { transform: rotate(45deg) translateY(6px); opacity: 1; }
 }
 
-/* ============================================
+/* 
    SHOWS SECTION
-   ============================================ */
+    */
 .shows-section {
   padding: 100px 1.5rem;
 }
@@ -512,9 +512,7 @@ input, button { font-family: inherit; }
   border: 1px solid var(--border);
 }
 
-/* ============================================
-   INFO BAND
-   ============================================ */
+/* INFO BAND */
 .info-band {
   background: var(--bg-surface);
   border-top: 1px solid var(--border);
@@ -550,9 +548,9 @@ input, button { font-family: inherit; }
   margin: 0;
 }
 
-/* ============================================
+/* 
    FOOTER
-   ============================================ */
+    */
 .site-footer {
   padding: 2rem 1.5rem;
   border-top: 1px solid var(--border);
@@ -580,9 +578,9 @@ input, button { font-family: inherit; }
   color: var(--text-muted);
 }
 
-/* ============================================
+/* 
    AUTH PAGES
-   ============================================ */
+    */
 .auth-body {
   min-height: 100vh;
   display: flex;
@@ -681,7 +679,21 @@ input, button { font-family: inherit; }
 
 .auth-form, .book-form { display: flex; flex-direction: column; gap: 1rem; }
 .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-row { 
+  display: grid;
+   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+   gap: 1rem; 
+  }
+
+  .form-row .form-group {
+  min-width: 0;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .form-group label {
   font-size: 0.78rem;
   font-weight: 600;
@@ -777,9 +789,9 @@ input, button { font-family: inherit; }
 }
 .alert-success a { color: var(--violet-light); font-weight: 600; }
 
-/* ============================================
+/* 
    PAGE BG (for inner pages)
-   ============================================ */
+    */
 .page-bg {
   position: fixed;
   inset: 0;
@@ -804,9 +816,9 @@ input, button { font-family: inherit; }
   opacity: 0.08;
 }
 
-/* ============================================
+/* 
    BOOK TICKET PAGE
-   ============================================ */
+    */
 .book-main {
   position: relative;
   z-index: 1;

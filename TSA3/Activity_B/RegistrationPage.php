@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <div class="form-group">
           <label>Confirm Password</label>
-          <input type="password" name="confirm_password" placeholder="Repeat password" required>
+          <input type="password" name="confirm_password" placeholder="Enter password" required>
         </div>
       </div>
       <button type="submit" class="btn-primary btn-full">Create Account</button>
