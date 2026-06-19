@@ -11,9 +11,12 @@
 
 ## 📸 Screenshots
 
- <img width="1224" height="787" alt="image" src="https://github.com/user-attachments/assets/bf8bbc0f-1e11-4c7d-b633-b6d4c458f4c9" />
- | <img width="681" height="813" alt="image" src="https://github.com/user-attachments/assets/9751122d-8f7f-4785-9e29-11668cffb1b7" />
- | <img width="912" height="796" alt="image" src="https://github.com/user-attachments/assets/c5d64152-0a2e-4a5c-abda-7b206ef5eb79" />
+| Homepage | Book Tickets | My Tickets |
+|---|---|---|
+| ![Homepage](<img width="1256" height="848" alt="image" src="https://github.com/user-attachments/assets/f630f3a8-7079-404b-aae2-348643c8a2f3" />
+) | ![Booking](<img width="1241" height="847" alt="image" src="https://github.com/user-attachments/assets/c82f3162-27b8-41af-8fa7-a3d5784cb6fc" />
+) | ![Tickets](<img width="975" height="837" alt="image" src="https://github.com/user-attachments/assets/5253af2c-2eba-4275-b6f9-402f99a2e130" />
+) |
  
 ---
 
