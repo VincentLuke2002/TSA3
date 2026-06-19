@@ -13,7 +13,7 @@
 
 | Homepage | Book Tickets | My Tickets |
 |----------|--------------|------------|
-| ![Homepage](https://github.com/user-attachments/assets/f630f3a8-7079-404b-aae2-348643c8a2f3) | ![Book Tickets](https://github.com/user-attachments/assets/c82ff3162-27b8-41af-8fa7-3a8574ab6bfc) | ![My Tickets](https://github.com/user-attachments/assets/5253af2c-2eba-4275-b6f9-402f99a2e130) |
+| ![Homepage](https://github.com/user-attachments/assets/f630f3a8-7079-404b-aae2-348643c8a2f3) | ![Book Tickets](https://github.com/user-attachments/assets/3e360e5e-1fd5-42f7-9db9-0344ed71edbb) | ![My Tickets](https://github.com/user-attachments/assets/5253af2c-2eba-4275-b6f9-402f99a2e130) |
 
  
 ---
